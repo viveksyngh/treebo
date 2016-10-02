@@ -1,6 +1,6 @@
 from django.views.decorators.csrf import csrf_exempt
 from django.conf.urls import url
-from views import DealsView, StatsView, SearchView
+from views import DealsView, StatsView, SearchView, LikeView
 
 urlpatterns = [
                 url(r'list/',
@@ -9,4 +9,6 @@ urlpatterns = [
                     csrf_exempt(StatsView.as_view())),
                 url(r'search/',
                     csrf_exempt(SearchView.as_view())),
+                 url(r'like/',
+                    csrf_exempt(LikeView.as_view())),
 ]

@@ -105,5 +105,27 @@ class SearchView(View):
 		return send_200(self.response)
 
 
+class LikeView(View):
+
+   	def __init__(self):
+		self.response = {"message": "",
+						  "result": {}
+						}
+	
+	def dispatch(self, request, *args, **kwargs):
+		return super(LikeView, self).dispatch(request, *args, **kwargs)
+
+	def post(self, request, *args, **kwargs):
+		hotel_id = request.POST.get('hotel_id')
+		try:
+			hotel = Deals.objects.get(pk=hotel_id)
+		except Deals.DoesNotExist:
+			self.response["message"] = "Hotel does not exists."
+			return send_400(self.response)
+		else:
+			hotel.likes += 1
+			hotel.save()
+			self.response["message"] = "Success"
+		return send_200(self.response)
 
 
