@@ -1,0 +1,67 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	background-color: #FFFFFF;
+	color: #b3b3b3;
+}
+
+.header {
+	height: 70px;
+	padding: 10px;
+	background-color: #FFF;
+	z-index: 10;
+	border-bottom: 2px solid #000000;
+	color: #2ed39e;
+}
+
+#heading, h2{
+	display: inline;
+}
+
+.search-stats  {
+	height: 100px;
+	border-bottom: 2px solid #000000;
+}
+
+.search {
+	background-color: #dddddd;
+	height: 99px;
+}
+
+.search-form {
+	margin: 10px;
+}
+
+.sort-form {
+	display: inline;
+}
+
+.stats {
+	background-color: #dff0d8;
+	color: #3c763d;
+}
+
+.deals {
+	padding: 10px;
+	background-color: #DCDCDC;
+}
+
+.deal {
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	z-index: 10px;
+	border: 2px solid #2ce89f;
+	margin: 4px;
+}
+
+.media {
+	padding: 5px;
+}
+
+.deal-name {
+	font-size: 20px;
+	color: #009999;
+}
+
+.locality {
+	color: #A9A9A9;
+}

@@ -1,0 +1,103 @@
+<div class="text-left header">
+	<div class="heading">
+		<h2>DealsHub</h2> <span> - finding hotels made easy!</span>
+	</div>
+</div> <!-- header -->
+
+<div class="search-stats">
+	<div class="row">
+		<div class="col-md-4 search">
+		<form class="search-form">
+			<input type="text" class="form-control" placeholder="Search (by name, location)" ng-model="query" ng-change="do_search_query()">
+		</form>
+		<form class="sort-form">
+			<div class="col-md-4">
+				<h4> Sort by </h4>
+			</div>
+			<div class="col-md-8">
+				<div class="radio-inline">
+	  				<label>
+	    				<input type="radio" name="optionsRadios" id="rating" value="rating" ng-model="sort_by" ng-click="sort_result()" checked>Rating
+	  				</label>
+				</div>
+				<div class="radio-inline">
+	  				<label>
+	    				<input type="radio" name="optionsRadios" id="price" value="price"
+	    				 ng-model="sort_by" ng-click="sort_result()" >Price
+	    			</label>
+				</div>
+				<div class="radio-inline">
+	  				<label>
+	    				<input type="radio" name="optionsRadios" id="like" value="like" ng-model="sort_by" ng-click="sort_result()" >Like
+	    			</label>
+				</div>
+			</div>
+		</form>
+		</div>
+		<div class="col-md-8 stats">
+			<h4>Stats</h4>
+			<div class="row">
+				<div class="col-md-3"><strong>Total Likes</strong>: {{total_likes}}</div>
+				<div class="col-md-3"><strong>Avg. Rating</strong>: {{avg_rating}}</div>
+				<div class="col-md-3"><strong>Max. /Min. Price</strong>: {{max_price}} / {{min_price}}</div>
+				<div class="col-md-3"><strong>API hits</strong>: {{api_hits}}</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-12"><strong>Area Distribution </strong>: {{area_distribution_string}}</div>
+			</div>
+		</div>
+	</div>
+</div> <!-- search-stat -->
+<div class="deals">
+	<div class="row">
+		<div class="col-md-4" ng-repeat="deal in deals">
+			<div class="deal">
+				<span><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+				<strong class="deal-name">{{deal.name}}</strong></span>
+				<p class="locality">
+					<i class="fa fa-location-arrow" aria-hidden="true"></i>
+					 Locality: {{deal.locality}}
+				</p>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="media">
+							<a href="{{deal.image}}">
+  							<img width="220" height="175" src="{{deal.image}}" alt="...">
+   							</a>
+  						</div>
+					</div>
+					<div class="col-md-6">
+						<p>
+							<i class="fa fa-star-o" aria-hidden="true"></i>
+							<i class="fa fa-star-o" aria-hidden="true"></i>
+							<i class="fa fa-star-o" aria-hidden="true"></i>
+							<i class="fa fa-star-o" aria-hidden="true"></i>
+							<i class="fa fa-star-o" aria-hidden="true"></i>
+							   {{deal.rating}}
+						</p>
+						<p>
+						<strong><i class="fa fa-link" aria-hidden="true"></i> Link</strong>: <a href="{{deal.link}}">Treebo link</a>
+						</p>
+						<p>
+							<strong>Actual Price</strong>: &nbsp; <del>&#8377; {{deal.actual_price}}</del>
+						</p>
+						<p>
+							<strong>
+								<i class="fa fa-tag" aria-hidden="true"></i> Final Price
+							</strong>:
+							&nbsp; &#8377; {{deal.final_price}}
+						</p>
+						<div class="col-md-6">
+							<span>{{deal.discount}}% off</span>
+						</div>
+						<div class="col-md-6">
+							<span><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i> {{deal.like}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
