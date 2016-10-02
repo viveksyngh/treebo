@@ -104,6 +104,28 @@ app.controller("mainController", function($scope, $http){
       }
     }
 
+    var _like_hotel = function(hotel_id) {
+
+          $http({
+            method: 'POST',
+            data: 'hotel_id='+ hotel_id, 
+            url: BASE_URL + 'like/',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            }).then(function successCallback(response) {
+               console.log(response);
+            }, 
+                function errorCallback(response) {
+                console.log("Error");
+                console.log(response);
+            });
+    };
+
+    $scope.like = function(hotel_id) {
+      _like_hotel(hotel_id);
+    }
+
     $scope.get_filled_stars = function(rating) {
       var arr = [];
       for(var i = 1; i <= Math.round(rating); i++)

@@ -65,3 +65,23 @@ body {
 .locality {
 	color: #A9A9A9;
 }
+
+.rating {
+	color: #eb9316;
+}
+
+.discount-circle {
+	width: 90px;
+	height: 40px;
+	margin:10px 0 0 -10px;  
+	-moz-border-radius: 100px / 50px;
+    -webkit-border-radius: 100px / 50px;
+    border-radius: 100px / 50px;
+	background-color: #ff5050;
+}
+
+.discount {
+	color: #FFFFFF;
+	font-size: 15px;
+	margin-left: 20px;
+}
